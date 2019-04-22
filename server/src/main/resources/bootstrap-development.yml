@@ -1,0 +1,7 @@
+logging:
+  file: ${LOG_FILE:wms}
+  level:
+    root: ${LOG_LEVEL:INFO}
+    com.icwind.wms: ${LOG_LEVEL_WMS:DEBUG}
+  maxFileSize: ${LOG_MAX_FILE_SIZE:10}
+  totalSizeCap: ${LOG_TOTAL_SIZE_CAP:100}

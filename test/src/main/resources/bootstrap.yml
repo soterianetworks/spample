@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: wmssvc
+
+logging:
+  file: wms
+  level:
+    root: INFO
+    com.icwind.wms: DEBUG
