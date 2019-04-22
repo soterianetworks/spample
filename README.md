@@ -500,7 +500,7 @@ public class MachineClassSaveParam implements MachineClassSaveRequest {
 ### 示例 - 工厂
 
 HTTP 请求 | 路径参数 | 传入参数 | 响应HTTP STATUS  | 备注
---- | --- | --- | --- | --- | --- 
+--- | --- | --- | --- | --- 
 GET /factories | | FactorySearchParam |  | 查询列表
 GET /factories/{id} | id | | | 查询详情
 POST /factories | | FactorySaveParam | | 新增
@@ -512,7 +512,7 @@ POST /factories/{id}/warehouses | id | WarehouseSaveParam | | 该请求可创建
 ### 示例 - 仓库
 
 HTTP 请求 | 路径参数 | 传入参数 | 响应HTTP STATUS  | 备注
----|---|---|---|---|---|---
+---|---|---|---|---
 GET /warehouses | | WarehouseSearchParam |  |
 GET /warehouses/{id} | id | |  |
 POST /warehouses | | WarehouseSaveParam | |
@@ -524,7 +524,7 @@ POST /warehouses/{id}/racks |id | RackSaveParam | |  该请求可创建指定仓
 ### 示例 - 储物架
 
 HTTP 请求 | 路径参数 | 传入参数 | 响应HTTP STATUS | 备注
----|---|---|---|---|---
+---|---|---|---|---
 GET /racks | | RackSearchParam | 
 GET /racks/{id} | id | | 
 POST /racks | | RackSaveParam |
@@ -539,10 +539,8 @@ DELETE /racks/{id} | id |
 ### Model config 示例 - ShiftOutputLog
 
 > 软删除标识为 deleted 字段，需要在实体上配置 @Where条件，过滤掉 deleted = 1 的数据
+
 ```java
-/**
- * @author tundra-ziv.
- */
 @Entity
 @Table(name = "MES_SHIFT_OUTPUT_LOG")
 @Where(clause = "deleted = 0")
@@ -571,9 +569,6 @@ public class ShiftOutputLog extends AbstractBenityMultiTenantAuditable {
 > 重写 JpaRepository delete 方法
 
 ```java
-/**
- * @author tundra-dz
- */
 @NoRepositoryBean
 public interface AbstractRepository<T> extends JpaRepository<T, String>, JpaSpecificationExecutor<T> {
 
